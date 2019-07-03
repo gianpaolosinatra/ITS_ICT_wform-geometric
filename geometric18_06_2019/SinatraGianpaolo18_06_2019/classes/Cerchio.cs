@@ -26,7 +26,7 @@ namespace SinatraGianpaolo18_06_2019.classes
 
 		public Cerchio(double raggio)
 		{
-			_raggio = raggio;
+			_raggio = Math.Round(raggio, 2);
 		}
 
 		public override string ToString()

@@ -17,7 +17,7 @@ namespace SinatraGianpaolo18_06_2019.classes
 
         public Pentagono(double lato)
         {
-            _lato = lato;
+            _lato = Math.Round(lato, 2);
             _apotema = _lato * 0.688;
         }
         
@@ -37,6 +37,7 @@ namespace SinatraGianpaolo18_06_2019.classes
             string aloa = "";
             aloa += "CARATTERISTICHE FIGURA: Pentagono \n";
             aloa += "\n Lato: " + _lato.ToString();
+            aloa += "\n Apotema: " + _apotema.ToString();
             aloa += "\n Area: " + CalcoloArea().ToString();
             aloa += "\n Perimetro: " + CalcoloPerimetro().ToString();
             return aloa;

@@ -50,21 +50,27 @@ namespace SinatraGianpaolo18_06_2019
 
         private void btnVolume_Click(object sender, EventArgs e)
         {
-            double altezzaV = G3D.GetDouble(txtAltezzaV.Text);
-            if (txtAltezzaV.Text == "")
+            double altezzaV = Math.Round(G3D.GetDouble(txtAltezzaV.Text), 2);
+            if (txtAltezzaV.Text == "" || G3D.IsNegative(altezzaV))
                 MessageBox.Show("Inserisci l' ALTEZZA del solido prima di continuare.");
             else
             {
-                lblRisultato.Text = _risultato + 
-                "\n Altezza Solido: " + txtAltezzaV.Text +
-                "\n Volume: " +
-                G3D.CalcoloVolume(_area, Double.Parse(txtAltezzaV.Text)).ToString();
-                txtAltezzaV.Text = "";
+                ReturnVolumeData();
             }
         }
 
+        private void ReturnVolumeData()
+        {
+            lblRisultato.Text = _risultato +
+               "\n Altezza Solido: " + txtAltezzaV.Text +
+               "\n Volume: " +
+               G3D.CalcoloVolume(_area, Double.Parse(txtAltezzaV.Text)).ToString();
+            txtAltezzaV.Text = "";
+        }
 
+        private void lblMessageV_Click(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

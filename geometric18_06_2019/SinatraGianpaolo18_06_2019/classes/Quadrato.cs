@@ -25,7 +25,7 @@ namespace SinatraGianpaolo18_06_2019.classes
 
         public Quadrato(double lato)
         {
-            _lato = lato;
+            _lato = Math.Round(lato, 2);
         }
 
         public override string ToString()

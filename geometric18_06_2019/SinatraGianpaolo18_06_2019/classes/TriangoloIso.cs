@@ -15,9 +15,9 @@ namespace SinatraGianpaolo18_06_2019.classes
 
         public TriangoloIso(double ba, double alt)
         {
-            _base = ba;
-            _altezza = alt;
-            _lato = Math.Sqrt(Math.Pow(_base / 2, 2) + Math.Pow(_altezza, 2));
+            _base = Math.Round(ba, 2);
+            _altezza = Math.Round(alt, 2);
+            _lato = Math.Round(Math.Sqrt(Math.Pow(_base / 2, 2) + Math.Pow(_altezza, 2)));
         }
 
 
@@ -34,7 +34,7 @@ namespace SinatraGianpaolo18_06_2019.classes
         public override string ToString()
         {
             string aloa = "";
-            aloa += "CARATTERISTICHE FIGURA: Triangolo\n";
+            aloa += "CARATTERISTICHE FIGURA: Triangolo Isoscele\n";
             aloa += "\n Base: " + _base.ToString();
             aloa += "\n Altezza: " + _altezza.ToString();
             aloa += "\n Lato: " + _lato.ToString();

@@ -17,7 +17,7 @@ namespace SinatraGianpaolo18_06_2019.classes
 
         public Esagono(double lato)
         {
-            _lato = lato;
+            _lato = Math.Round(lato, 2);
             _apotema = _lato * 0.866;
         }
 

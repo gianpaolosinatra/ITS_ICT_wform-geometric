@@ -35,7 +35,7 @@ namespace SinatraGianpaolo18_06_2019
                 {
                     case 0:
                         double raggio = G3D.GetDouble(txtRaggio.Text);
-                        if (rbtnCerchio.Checked && txtRaggio.Text == "" || raggio == 0)
+                        if (rbtnCerchio.Checked && txtRaggio.Text == "" || G3D.IsNegative(raggio))
                             MessageBox.Show("Inserisci un RAGGIO valido prima di continuare.");
                         else
                         {
@@ -46,7 +46,7 @@ namespace SinatraGianpaolo18_06_2019
                         break;
                     case 1:
                         double qLato = G3D.GetDouble(txtLato.Text);
-                        if (rbtnQuadrato.Checked && txtLato.Text == "" || qLato == 0)
+                        if (rbtnQuadrato.Checked && txtLato.Text == "" || G3D.IsNegative(qLato))
                             MessageBox.Show("Inserisci un LATO valido prima di continuare.");
                         else
                         {
@@ -58,7 +58,7 @@ namespace SinatraGianpaolo18_06_2019
                     case 3:
                         double tBase = G3D.GetDouble(txtBase.Text);
                         double tAltezza = G3D.GetDouble(txtAltezza.Text);
-                        if (rbtnTriangolo.Checked && txtBase.Text == "" || txtAltezza.Text == "" || tBase == 0 || tAltezza == 0)
+                        if (rbtnTriangolo.Checked && txtBase.Text == "" || txtAltezza.Text == "" || G3D.IsNegative(tAltezza, tBase))
                             MessageBox.Show("Inserisci BASE e ALTEZZA validi prima di continuare.");
                         else
                         {
@@ -70,7 +70,7 @@ namespace SinatraGianpaolo18_06_2019
                     case 4:
                         double rBase = G3D.GetDouble(txtBase.Text);
                         double rAltezzaa = G3D.GetDouble(txtAltezza.Text);
-                        if (rbtnRettangolo.Checked && txtBase.Text == "" || txtAltezza.Text == "" || rBase == 0 || rAltezzaa == 0)
+                        if (rbtnRettangolo.Checked && txtBase.Text == "" || txtAltezza.Text == "" || G3D.IsNegative(rBase, rAltezzaa))
                             MessageBox.Show("Inserisci BASE e ALTEZZA validi prima di continuare.");
                         else
                         {
@@ -81,7 +81,7 @@ namespace SinatraGianpaolo18_06_2019
                         break;
                     case 5:
                         double pLato = G3D.GetDouble(txtLato.Text);
-                        if (rbtnPentagono.Checked && txtLato.Text == "" || pLato == 0)
+                        if (rbtnPentagono.Checked && txtLato.Text == "" || G3D.IsNegative(pLato))
                             MessageBox.Show("Inserisci un LATO valido prima di continuare.");
                         else
                         {
@@ -92,7 +92,7 @@ namespace SinatraGianpaolo18_06_2019
                         break;
                     case 6:
                         double esLato = G3D.GetDouble(txtLato.Text);
-                        if (rbtnEsagono.Checked && txtLato.Text == "" || esLato == 0)
+                        if (rbtnEsagono.Checked && txtLato.Text == "" || G3D.IsNegative(esLato))
                             MessageBox.Show("Inserisci un LATO valido prima di continuare.");
                         else
                         {
@@ -159,11 +159,14 @@ namespace SinatraGianpaolo18_06_2019
         private void RbtnPentagono_CheckedChanged(object sender, EventArgs e)
         {
             ActivateElements();
-            if (rbtnTriangolo.Checked)
+            if (rbtnPentagono.Checked)
             {
                 flag = 5;
             }
         }
+
+       
+
 
         private void ActivateElements()
         {

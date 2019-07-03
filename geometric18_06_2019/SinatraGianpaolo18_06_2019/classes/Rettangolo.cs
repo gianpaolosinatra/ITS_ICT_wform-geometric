@@ -25,8 +25,8 @@ namespace SinatraGianpaolo18_06_2019.classes
 
         public Rettangolo(double ba, double alt)
         {
-            _base = ba;
-            _altezza = alt;
+            _base = Math.Round(ba, 2);
+            _altezza = Math.Round(alt, 2);
         }
 
         public override string ToString()

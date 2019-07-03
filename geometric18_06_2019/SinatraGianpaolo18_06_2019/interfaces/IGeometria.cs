@@ -8,8 +8,7 @@ namespace SinatraGianpaolo18_06_2019.interfaces
 {
     public interface IGeometria
     {
-        double CalcoloArea();
         double CalcoloPerimetro();
-        
+        double CalcoloArea();
     }
 }

@@ -1,7 +1,0 @@
-Quadrato	X
-Cerchio		X
-pentagono	X
-esagono		X
-
-triangolo
-rettangolo
